@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+    <title>SMART音乐--小聪明的歌单</title>
+    <link rel="icon" type="image/x-icon" href="img/logo.ico" />
+</head>
+<link rel="stylesheet" href="css/jquery.mCustomScrollbar.css" />
+<link rel="stylesheet" href="css/smartmsc.css">
+<body>
+<div class="mod_popup_tips sendfail"><h2></h2></div>
+<div class="mod_popup_tips addfail">
+    <img src="img/addfail.png">
+    <h2></h2>
+</div>
+<div class="mod_popup_tips addsuc">
+    <img src="img/addsuc.png">
+    <h2>已添加到歌单<br>去<a href="usercenter.html">我的歌单</a>查看</h2>
+</div>
+<div class="loginbox floatbox">
+    <div class="floatwrap">
+        <div class="close"><a href="javascript:toggleLog();"><img src="img/close.png"></a></div>
+        <div class= "floatmain">
+            <h2>登陆</h2>
+            <div class="item">
+                <input id = "userid1" type="text" placeholder="用户ID" onkeyup = "value=value.replace(/[^\d]/g,'')">
+            </div>
+            <div class="item">
+                <input id="password1" type="password" placeholder="密码">
+            </div>
+            <button class="btn login_btn" onclick="javascript:goLogin();">登陆
+                <span></span>
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+            <span class="login_info"></span>
+        </div>
+    </div>
+</div>
+<div class="regbox floatbox">
+    <div class="floatwrap">
+        <div class="close"><a href="javascript:toggleReg();"><img src="img/close.png"></a></div>
+        <div class= "floatmain">
+            <h2>注册</h2>
+            <div class="item">
+                <input id = "userid2" type="text" placeholder="用户ID" onkeyup = "value=value.replace(/[^\d]/g,'')">
+            </div>
+            <div class="item">
+                <input id = "username" type="text" placeholder="姓名">
+            </div>
+            <div class="item">
+                <input id = "tel" type="text" placeholder="手机号" onkeyup = "value=value.replace(/[^\d]/g,'')">
+            </div>
+            <div class="item">
+                <input id = "password2" type="password" placeholder="密码">
+            </div>
+            <button class="btn login_btn" onclick="javascript:goReg();">注册
+                <span></span>
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+            <span class="reg_info"></span>
+        </div>
+    </div>
+</div>
+<div class="header">
+    <div class="logo"></div>
+    <div class="reg unlogin"><span><a href="javascript:toggleReg();">注册</a></span><span><a href="javascript:toggleLog();">登录</a></span></div>
+    <div class="reg login"><span><a href="usercenter.html" title="我的歌单" id="namebox"></a></span><span><a href="/smartmusic/logoff">注销</a></span></div>
+</div>
+<div class="content">
+    <div class="content_in">
+        <div class="left">
+            <div class="lefthead">
+                <span class="bt" style="display: none;"><i></i>收藏</span>
+                <span class="bt bt_addto"><i></i>添加到</span>
+                <span class="bt bt_download"><i></i>下载</span>
+                <span class="bt bt_delete"><i></i>删除</span>
+                <span class="bt bt_deleteall"><i></i>清空列表</span>
+            </div>
+                <div class="msclist" data-mcs-theme="minimal-dark">
+                <!-- 初始化滚动条样式 -->
+                <ul>
+                    <li class="title">
+                        <div class="licheck"><i all="true"></i></div>
+                        <div class="linum"></div>
+                        <div class="liname">歌曲</div>
+                        <div class="lisinger">歌手</div>
+                        <div class="litime">时长</div>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <div class="right">
+            <div class="info">
+                <a href="javascript:;" class="song_info_pic">
+                    <img src="img/player_cover.png" alt="">
+                </a>
+                <div class="song_info_name">
+                    <a href="javascript:;"></a>
+                </div>
+                <div class="song_info_singer">
+                    <a href="javascript:;"></a>
+                </div>
+                <div class="song_info_ablum">
+                    <a href="javascript:;"></a>
+                </div>
+            </div>
+            <div class="lyric_contain"  data-mcs-theme="minimal-dark">
+                <ul class="lyric">
+                    <!-- <li class="cur">第一条歌词</li>
+                    <li>第二条歌词</li> -->
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="footer">
+    <div class="footer_in">
+        <div class="comment_box">
+            <div class="comment_main">
+                <div class="comments">
+                </div>
+                <div class="loading">
+                    <div class="loadingbox">加载中<img src="img/loading.gif"></div>
+                </div>
+            </div>
+            <div style="height: 40px;"></div>
+            <div class="comment_foot">
+                <div class="inputwrap"><input type="text" placeholder="发表你的看法"></div>
+                <div class="send">发送</div>
+            </div>
+        </div>
+        <a href="javascript:;" class="music_pre"></a>
+        <a href="javascript:;" class="music_play"></a>
+        <a href="javascript:;" class="music_next"></a>
+        <div class="music_pro_info">
+            <div class="music_pro_top">
+                <span class="music_pro_left">
+                    <span class="msc_name"></span>
+                    <span class="msc_author"></span>
+                </span>
+                <span class="music_pro_right">
+                    <span class="start_time"></span> 
+                    <span class="end_time"></span>
+                </span>
+                <span></span>
+            </div>
+            <div class="music_pro_bar">
+                <div class="msc_pro_line"></div>
+                <div class="msc_pro_dot"></div>
+            </div>
+        </div>
+        <!-- <a href="javascript:;" class="music_mode"></a> -->
+        <a href="javascript:;" class="music_fav"></a>
+        <a href="javascript:;" class="music_down"></a>
+        <a href="javascript:;" class="music_comment">
+            <span class="comment_num"></span>
+        </a>
+        <!-- <a href="javascript:;" class="music_only"></a> -->
+        <div class="music_voice_info">
+            <a href="javascript:;" class="msc_sound"></a>
+            <div class="music_sound_bar">
+                <div class="msc_sound_line"></div>
+                <div class="msc_sound_dot"></div>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="maskbg"></div>
+<div class="maskcolor"></div>
+<audio src=""></audio>
+</body>
+</html>
+<script src="js/jquery-1.12.4.min.js"></script>
+<script src="js/jquery.mCustomScrollbar.js"></script>
+<script src="js/player.js"></script>
+<script src="js/probar.js"></script>
+<script src="js/lyric.js"></script>
+<script src="js/smartmsc.js"></script>
+<script src="js/event.js"></script>

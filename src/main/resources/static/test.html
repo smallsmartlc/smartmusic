@@ -1,0 +1,45 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+        "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<h2>登陆</h2>
+    <input type="text" name="userid" id="userid">
+    <input type="text" name = "password" id = "password">
+    <input type="submit" value="提交" id = "button">
+<h3></h3>
+</body>
+</html>
+<script src="js/jquery-1.12.4.min.js"></script>
+<script>
+    var id = $("#userid")
+    var password = $("#password")
+    var button = $("#button")
+    var box = $("h3");
+    button.click(function () {
+        $.ajax({
+            type: "post",
+            url: "/checkLogin",
+            dataType: "text",
+            data: {
+                userid : id.val(),
+                password: password.val()
+            },
+            beforeSend: function () {
+                box.text('正在处理');
+            },
+            success: function (res) {
+                console.log(res);
+                if (parseInt(res) == 915) {
+                    box.text('登陆成功');
+                } else {
+                    box.text(res);
+                }
+            },
+            
+        });
+    });
+</script>

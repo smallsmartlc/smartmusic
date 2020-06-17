@@ -1,0 +1,122 @@
+[
+  {
+    "musicid":"999986",
+    "name":"The London",
+    "singer": "Young Thug/J. Cole/Travis Scott",
+    "album": "The London-Young Thug,J. Cole,Travis Scott",
+    "time": "03:19",
+    "link_url":"source/TheLondon/The London-Young Thug,J. Cole,Travis Scott.mp3",
+    "cover":"source/TheLondon/TheLondon.jpg",
+    "link_lrc":"source/TheLondon/The London-Young Thug,J. Cole,Travis Scott.lrc"
+  },
+  {
+    "musicid":"999987",
+    "name":"Taste",
+    "singer": "Tyga/Offset",
+    "album": "Taste",
+    "time": "03:52",
+    "link_url":"source/Taste/Taste-Tyga,Offset.mp3",
+    "cover":"source/Taste/Taste-Tyga,Offset.jpg",
+    "link_lrc":"source/Taste/Taste-Tyga,Offset.lrc"
+  },
+  {
+    "musicid":"999988",
+    "name":"Manta",
+    "singer": "刘柏辛Lexie",
+    "album": "Manta",
+    "time": "03:22",
+    "link_url":"source/Manta/Manta-刘柏辛Lexie.mp3",
+    "cover": "source/Manta/Manta-刘柏辛Lexie.jpg",
+    "link_lrc": "source/Manta/Manta-刘柏辛Lexie.lrc"
+  },
+  {
+    "musicid":"999989",
+    "name":"Rockstar",
+    "singer": "刘柏辛Lexie/Mula",
+    "album": "Rockstar",
+    "time": "04:23",
+    "link_url":"source/Rockstar/Rockstar(feat.Mula)-刘柏辛.mp3",
+    "cover": "source/Rockstar/RockStar.jpg",
+    "link_lrc": "source/Rockstar/Rockstar.lrc"
+  },
+  {
+    "musicid":"999990",
+    "name":"没得",
+    "singer": "刘聪KEY.L/$CC731",
+    "album": "没得",
+    "time": "04:24",
+    "link_url":"source/没得/没得 - 刘聪KEY.L,$CC731.mp3",
+    "cover": "source/没得/没得.jpg",
+    "link_lrc": "source/没得/没得 - 刘聪KEY.L,$CC731.lrc"
+  },
+  {
+    "musicid":"999991",
+    "name":"EVERYDAY",
+    "singer": "布瑞吉Bridge/K ELEVEN/Gosh Music",
+    "album": "EVERYDAY",
+    "time": "03:12",
+    "link_url":"source/EVERYDAY/EVERYDAY- 布瑞吉Bridge,K ELEVEN,Gosh Music.mp3",
+    "cover": "source/EVERYDAY/EVERYDAY.jpg",
+    "link_lrc": "source/EVERYDAY/EVERYDAY.lrc"
+  },
+  {
+    "musicid":"999992",
+    "name":"我不再担心(Prod. By Snapz)",
+    "singer": "马思唯",
+    "album": "A Few Good Kids",
+    "time": "02:30",
+    "link_url":"source/我不再担心/我不再担心 (Prod. By Snapz)-马思唯.mp3",
+    "cover": "source/我不再担心/我不再担心.png",
+    "link_lrc": "source/我不再担心/我不再担心.lrc"
+  },
+  {
+    "musicid":"999993",
+    "name":"Hair",
+    "singer": "李佳隆/L4WUDU",
+    "album": "JELLO/REAL",
+    "time": "02:59",
+    "link_url":"source/Hair/Hair - 李佳隆,L4WUDU.mp3",
+    "cover": "source/Hair/Hair-李佳隆,L4WUDU.jpg",
+    "link_lrc": "source/Hair/Hair - 李佳隆,L4WUDU.lrc"
+  },
+  {
+    "musicid":"999994",
+    "name":"DevilMayCry",
+    "singer": "L4WUDU",
+    "album": "DevilMayCry",
+    "time": "03:08",
+    "link_url":"source/DevilMayCry/DevilMayCry - L4WUDU.mp3",
+    "cover": "source/DevilMayCry/DevilMayCry.jpg",
+    "link_lrc": "source/DevilMayCry/DevilMayCry - L4WUDU.lrc"
+  },
+  {
+    "musicid":"999995",
+    "name":"马思唯 - 崂山道士",
+    "singer": "马思唯",
+    "album": "P.E.I Vol.2",
+    "time": "04:04",
+    "link_url":"source/崂山道士/马思唯 - 崂山道士 - 马思唯.mp3",
+    "cover": "source/崂山道士/马思唯-崂山道士.jpg",
+    "link_lrc": "source/崂山道士/马思唯 - 崂山道士-马思唯.lrc"
+  },
+  {
+    "musicid":"999998",
+    "name":"JULY",
+    "singer": "吴亦凡",
+    "album": "JULY",
+    "time": "03:07",
+    "link_url":"source/JULY/JULY - 吴亦凡.mp3",
+    "cover": "source/JULY/JULY-吴亦凡.jpg",
+    "link_lrc": "source/JULY/JULY - 吴亦凡.lrc"
+  },
+  {
+    "musicid":"999999",
+    "name":"想你的7",
+    "singer": "Lil-7/SEVENT/果妹/IDEA MUSIC",
+    "album": "想你的7",
+    "time": "03:51",
+    "link_url":"source/想你的7/想你的7 - Lil-7,SEVENT,果妹,IDEA MUSIC.mp3",
+    "cover": "source/想你的7/想你的7.jpg",
+    "link_lrc": "source/想你的7/想你的7 - Lil-7,SEVENT,果妹,IDEA MUSIC.lrc"
+  }
+]

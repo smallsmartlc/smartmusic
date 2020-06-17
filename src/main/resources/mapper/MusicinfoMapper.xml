@@ -1,0 +1,258 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="smart.smartmusic.mapper.MusicinfoMapper">
+  <resultMap id="BaseResultMap" type="smart.smartmusic.pojo.Musicinfo">
+    <id column="musicid" jdbcType="INTEGER" property="musicid" />
+    <result column="name" jdbcType="VARCHAR" property="name" />
+    <result column="singer" jdbcType="VARCHAR" property="singer" />
+    <result column="album" jdbcType="VARCHAR" property="album" />
+    <result column="time" jdbcType="VARCHAR" property="time" />
+    <result column="link_url" jdbcType="VARCHAR" property="linkUrl" />
+    <result column="cover" jdbcType="VARCHAR" property="cover" />
+    <result column="link_lrc" jdbcType="VARCHAR" property="linkLrc" />
+  </resultMap>
+  <sql id="Example_Where_Clause">
+    <where>
+      <foreach collection="oredCriteria" item="criteria" separator="or">
+        <if test="criteria.valid">
+          <trim prefix="(" prefixOverrides="and" suffix=")">
+            <foreach collection="criteria.criteria" item="criterion">
+              <choose>
+                <when test="criterion.noValue">
+                  and ${criterion.condition}
+                </when>
+                <when test="criterion.singleValue">
+                  and ${criterion.condition} #{criterion.value}
+                </when>
+                <when test="criterion.betweenValue">
+                  and ${criterion.condition} #{criterion.value} and #{criterion.secondValue}
+                </when>
+                <when test="criterion.listValue">
+                  and ${criterion.condition}
+                  <foreach close=")" collection="criterion.value" item="listItem" open="(" separator=",">
+                    #{listItem}
+                  </foreach>
+                </when>
+              </choose>
+            </foreach>
+          </trim>
+        </if>
+      </foreach>
+    </where>
+  </sql>
+  <sql id="Update_By_Example_Where_Clause">
+    <where>
+      <foreach collection="example.oredCriteria" item="criteria" separator="or">
+        <if test="criteria.valid">
+          <trim prefix="(" prefixOverrides="and" suffix=")">
+            <foreach collection="criteria.criteria" item="criterion">
+              <choose>
+                <when test="criterion.noValue">
+                  and ${criterion.condition}
+                </when>
+                <when test="criterion.singleValue">
+                  and ${criterion.condition} #{criterion.value}
+                </when>
+                <when test="criterion.betweenValue">
+                  and ${criterion.condition} #{criterion.value} and #{criterion.secondValue}
+                </when>
+                <when test="criterion.listValue">
+                  and ${criterion.condition}
+                  <foreach close=")" collection="criterion.value" item="listItem" open="(" separator=",">
+                    #{listItem}
+                  </foreach>
+                </when>
+              </choose>
+            </foreach>
+          </trim>
+        </if>
+      </foreach>
+    </where>
+  </sql>
+  <sql id="Base_Column_List">
+    musicid, name, singer, album, time, link_url, cover, link_lrc
+  </sql>
+  <select id="selectByExample" parameterType="smart.smartmusic.pojo.MusicinfoExample" resultMap="BaseResultMap">
+    select
+    <if test="distinct">
+      distinct
+    </if>
+    <include refid="Base_Column_List" />
+    from musicinfo
+    <if test="_parameter != null">
+      <include refid="Example_Where_Clause" />
+    </if>
+    <if test="orderByClause != null">
+      order by ${orderByClause}
+    </if>
+  </select>
+  <select id="selectByPrimaryKey" parameterType="java.lang.Integer" resultMap="BaseResultMap">
+    select 
+    <include refid="Base_Column_List" />
+    from musicinfo
+    where musicid = #{musicid,jdbcType=INTEGER}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer">
+    delete from musicinfo
+    where musicid = #{musicid,jdbcType=INTEGER}
+  </delete>
+  <delete id="deleteByExample" parameterType="smart.smartmusic.pojo.MusicinfoExample">
+    delete from musicinfo
+    <if test="_parameter != null">
+      <include refid="Example_Where_Clause" />
+    </if>
+  </delete>
+  <insert id="insert" parameterType="smart.smartmusic.pojo.Musicinfo">
+    insert into musicinfo (musicid, name, singer, 
+      album, time, link_url, 
+      cover, link_lrc)
+    values (#{musicid,jdbcType=INTEGER}, #{name,jdbcType=VARCHAR}, #{singer,jdbcType=VARCHAR}, 
+      #{album,jdbcType=VARCHAR}, #{time,jdbcType=VARCHAR}, #{linkUrl,jdbcType=VARCHAR}, 
+      #{cover,jdbcType=VARCHAR}, #{linkLrc,jdbcType=VARCHAR})
+  </insert>
+  <insert id="insertSelective" parameterType="smart.smartmusic.pojo.Musicinfo">
+    insert into musicinfo
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="musicid != null">
+        musicid,
+      </if>
+      <if test="name != null">
+        name,
+      </if>
+      <if test="singer != null">
+        singer,
+      </if>
+      <if test="album != null">
+        album,
+      </if>
+      <if test="time != null">
+        time,
+      </if>
+      <if test="linkUrl != null">
+        link_url,
+      </if>
+      <if test="cover != null">
+        cover,
+      </if>
+      <if test="linkLrc != null">
+        link_lrc,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="musicid != null">
+        #{musicid,jdbcType=INTEGER},
+      </if>
+      <if test="name != null">
+        #{name,jdbcType=VARCHAR},
+      </if>
+      <if test="singer != null">
+        #{singer,jdbcType=VARCHAR},
+      </if>
+      <if test="album != null">
+        #{album,jdbcType=VARCHAR},
+      </if>
+      <if test="time != null">
+        #{time,jdbcType=VARCHAR},
+      </if>
+      <if test="linkUrl != null">
+        #{linkUrl,jdbcType=VARCHAR},
+      </if>
+      <if test="cover != null">
+        #{cover,jdbcType=VARCHAR},
+      </if>
+      <if test="linkLrc != null">
+        #{linkLrc,jdbcType=VARCHAR},
+      </if>
+    </trim>
+  </insert>
+  <select id="countByExample" parameterType="smart.smartmusic.pojo.MusicinfoExample" resultType="java.lang.Long">
+    select count(*) from musicinfo
+    <if test="_parameter != null">
+      <include refid="Example_Where_Clause" />
+    </if>
+  </select>
+  <update id="updateByExampleSelective" parameterType="map">
+    update musicinfo
+    <set>
+      <if test="record.musicid != null">
+        musicid = #{record.musicid,jdbcType=INTEGER},
+      </if>
+      <if test="record.name != null">
+        name = #{record.name,jdbcType=VARCHAR},
+      </if>
+      <if test="record.singer != null">
+        singer = #{record.singer,jdbcType=VARCHAR},
+      </if>
+      <if test="record.album != null">
+        album = #{record.album,jdbcType=VARCHAR},
+      </if>
+      <if test="record.time != null">
+        time = #{record.time,jdbcType=VARCHAR},
+      </if>
+      <if test="record.linkUrl != null">
+        link_url = #{record.linkUrl,jdbcType=VARCHAR},
+      </if>
+      <if test="record.cover != null">
+        cover = #{record.cover,jdbcType=VARCHAR},
+      </if>
+      <if test="record.linkLrc != null">
+        link_lrc = #{record.linkLrc,jdbcType=VARCHAR},
+      </if>
+    </set>
+    <if test="_parameter != null">
+      <include refid="Update_By_Example_Where_Clause" />
+    </if>
+  </update>
+  <update id="updateByExample" parameterType="map">
+    update musicinfo
+    set musicid = #{record.musicid,jdbcType=INTEGER},
+      name = #{record.name,jdbcType=VARCHAR},
+      singer = #{record.singer,jdbcType=VARCHAR},
+      album = #{record.album,jdbcType=VARCHAR},
+      time = #{record.time,jdbcType=VARCHAR},
+      link_url = #{record.linkUrl,jdbcType=VARCHAR},
+      cover = #{record.cover,jdbcType=VARCHAR},
+      link_lrc = #{record.linkLrc,jdbcType=VARCHAR}
+    <if test="_parameter != null">
+      <include refid="Update_By_Example_Where_Clause" />
+    </if>
+  </update>
+  <update id="updateByPrimaryKeySelective" parameterType="smart.smartmusic.pojo.Musicinfo">
+    update musicinfo
+    <set>
+      <if test="name != null">
+        name = #{name,jdbcType=VARCHAR},
+      </if>
+      <if test="singer != null">
+        singer = #{singer,jdbcType=VARCHAR},
+      </if>
+      <if test="album != null">
+        album = #{album,jdbcType=VARCHAR},
+      </if>
+      <if test="time != null">
+        time = #{time,jdbcType=VARCHAR},
+      </if>
+      <if test="linkUrl != null">
+        link_url = #{linkUrl,jdbcType=VARCHAR},
+      </if>
+      <if test="cover != null">
+        cover = #{cover,jdbcType=VARCHAR},
+      </if>
+      <if test="linkLrc != null">
+        link_lrc = #{linkLrc,jdbcType=VARCHAR},
+      </if>
+    </set>
+    where musicid = #{musicid,jdbcType=INTEGER}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="smart.smartmusic.pojo.Musicinfo">
+    update musicinfo
+    set name = #{name,jdbcType=VARCHAR},
+      singer = #{singer,jdbcType=VARCHAR},
+      album = #{album,jdbcType=VARCHAR},
+      time = #{time,jdbcType=VARCHAR},
+      link_url = #{linkUrl,jdbcType=VARCHAR},
+      cover = #{cover,jdbcType=VARCHAR},
+      link_lrc = #{linkLrc,jdbcType=VARCHAR}
+    where musicid = #{musicid,jdbcType=INTEGER}
+  </update>
+</mapper>

@@ -1,0 +1,12 @@
+spring:
+  datasource:
+    driver-class-name: com.mysql.jdbc.Driver
+    url: jdbc:mysql://localhost:3306/smartmusic?useUnicode=true&characterEncoding=utf-8&useSSL=false&serverTimezone=UTC
+    username: root
+    password: password
+mybatis:
+  mapper-locations: classpath:/mapper/*.xml
+server:
+  servlet:
+    context-path: /smartmusic
+  port: 9915

@@ -1,0 +1,783 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+body,html{
+    width: 100%;
+    height: 100%;
+    font-size: 14px;
+}
+a{
+    text-decoration:none;
+}
+li{
+    list-style: none;
+}
+button{
+    background: transparent;
+    border: none;
+    outline: none;
+}
+
+.music_pro_top span:hover,
+.info div a:hover,
+.songs .limenu a:hover,
+.songs .lisinger a:hover,
+.msclist li .licheck i:hover,
+.lefthead .bt:hover,
+.reg span:hover,
+.logo:hover{
+    opacity:1;
+}
+
+.floatbox{
+    display: inline-block;
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0,0,0,0.7);
+    z-index: 1000;
+    display: none;
+}
+.floatbox .close{
+    float: right;
+}
+.floatbox .floatwrap{
+    display: inline-block;
+    margin: 0 auto;
+    width: 300px;
+    background-color: rgba(0,0,0,0.5);
+    position: absolute;
+    left: 40%;
+}
+.loginbox .floatwrap{
+    height: 300px;
+    top: 35%;
+}
+.regbox .floatwrap{
+    height: 330px;
+    top:25%;
+}
+.floatbox .floatwrap .floatmain{
+    margin: 20px;
+    color: #31c27c;
+}
+.item{
+    height: 45px;
+    border-bottom: 1px solid #fff;
+}
+.loginbox .item{
+    margin-bottom: 40px;
+}
+.regbox .item{
+    margin-bottom: 10px;
+}
+.item input{
+    width: 100%;
+    height: 100%;
+    background: transparent;
+    border: none;
+    outline: none;
+    color: #fff;
+}
+.item input:focus::placeholder{
+    font-size: 10px;
+    color: #fff;
+}
+.item input::placeholder{
+    font-size: 14px;
+    color: #31c27c;
+    transition: all 0.5s linear;
+}
+.btn{
+    padding: 5px 20px;
+    color: #31c27c;
+    position: relative;
+    overflow: hidden;
+    cursor: pointer;
+}
+.btn:hover{
+    border-radius: 3px;
+    color: #fff;
+    box-shadow: 0 0 5px 0 #31c27c,
+                0 0 25px 0 #31c27c,
+                0 0 50px 0 #31c27c,
+                0 0 100px 0 #31c27c;
+    background-color: #31c27c;
+    letter-spacing: 2px;
+    font-weight: lighter;
+}
+.btn>span{
+    position: absolute;
+}
+.btn>span:nth-child(1){
+    width: 100%;
+    height: 2px;
+    background: -webkit-linear-gradient(left,transparent,#31c27c);
+    left: -100%;
+    top: 0px;
+    animation: line1 1s linear infinite;
+}
+@keyframes line1{
+    50%,100%{
+        left:100%;
+    }
+}
+.btn>span:nth-child(2){
+    width: 2px;
+    height: 100%;
+    background: -webkit-linear-gradient(top,transparent,#31c27c);
+    right: 0;
+    top: -100%;
+    animation: line2 1s 0.25s linear infinite;
+}
+@keyframes line2{
+    50%,100%{
+        top:100%;
+    }
+}
+.btn>span:nth-child(3){
+    width: 100%;
+    height: 2px;
+    background: -webkit-linear-gradient(right,transparent,#31c27c);
+    left: 100%;
+    bottom: 0 ;
+    animation: line3 1s 0.5s linear infinite;
+}
+@keyframes line3{
+    50%,100%{
+        left:-100%;
+    }
+}
+.btn>span:nth-child(4){
+    width: 2px;
+    height: 100%;
+    background: -webkit-linear-gradient(bottom,transparent,#31c27c);
+    left: 0;
+    top: 100%;    
+    animation: line4 1s 0.75s linear infinite;
+}
+@keyframes line4{
+    50%,100%{
+        top:-100%;
+    }
+}
+.floatwrap h2{
+    text-align: center;
+    margin-bottom: 1px soild #fff;
+    color: #fff;
+}
+.floatwrap span{
+    color:red;
+}
+.mod_popup_tips{
+    display: none;
+    z-index: 100;
+    position: fixed;
+    left: 40%;
+    top: 40%;
+    padding: 37px 46px 25px;
+    line-height: 22px;
+    border-radius: 3px;
+    background: rgba(0,0,0,0.7);
+    text-align: center;
+}
+.mod_popup_tips img{
+    display: block;
+    width: 46px;
+    height: 46px;
+    margin: 0 auto 16px;
+}
+.mod_popup_tips h2{
+    font-size: 14px;
+    color: #fff;
+    font-weight: 400;
+}
+.mod_popup_tips h2 a{
+    text-decoration: none;
+    outline: none;
+    color: #31c27c;
+}
+.header{
+    width: 100%;
+    height: 45px;
+}
+.content{
+    width: 100%;
+    height: 600px;
+    height: 50%;
+}
+.footer{
+    width: 100%;
+    height: 80px;
+    position: fixed;
+    bottom: 0;
+}
+.content_in{
+    width: 1300px;
+    height: 600px;
+    margin: 0 auto;
+}
+
+.footer_in{
+    width: 1300px;
+    height: 60px;
+    margin: 0 auto;
+}
+.footer_in .comment_box{
+    position: relative;
+    float: right;
+    width: 300px;
+    height: 400px;
+    margin-top: -400px;
+    margin-right: 150px;
+    background-color: rgba(255,255,255,0.9);
+    display: none;
+}
+.footer_in .comment_box  .comment_main{
+    width: 100%;
+    height: 360px;
+    overflow-y: auto;
+}
+.footer_in .comment_box  .comment_main::-webkit-scrollbar {/*滚动条整体样式*/
+    width: 4px;     /*高宽分别对应横竖滚动条的尺寸*/
+    scrollbar-arrow-color:red;
+}
+.footer_in .comment_box  .comment_main::-webkit-scrollbar-thumb {/*滚动条里面小方块*/
+    border-radius: 5px;
+    background: rgba(0,0,0,0.2);
+    scrollbar-arrow-color:red;
+}
+.footer_in .comment_box  .comment_main::-webkit-scrollbar-track {/*滚动条里面轨道*/
+    border-radius: 0;
+    background: rgba(0,0,0,0.1);
+}
+.comment_box  .comment_main .comments{
+    width: 270px;
+    margin: 10px;
+    margin-bottom: 0;
+}
+.comment_box  .comment_main .loading{
+    text-align: center;
+    height: 20px;
+    line-height: 20px;
+    font-size: 12px;
+    background-color: #eee;
+    display: none;
+}
+.comment_main .loading .loadingbox{
+    display: inline;
+    line-height: 20px;
+}
+.loading .loadingbox img{
+    width: 14px;
+    height: 14px;
+}
+.comment_main .comments .comment_wrap{
+    min-height: 50px;
+    overflow: hidden;
+    color: #000;
+    margin-top: 10px;
+}
+.comments .comment_wrap .comment_username{
+    font-size: 14px;
+    font-weight: lighter;
+}
+.comments .comment_wrap .comment_time{
+    font-size: 10px;
+    line-height: 14px;
+    color: #666;
+}
+.comments .comment_wrap .comment_info{
+    font-size: 12px;
+}
+.comment_wrap .comment_info a{
+    text-decoration: none;
+    color: #31c27c;
+}
+.footer_in .comment_box .comment_foot{
+    position: absolute;
+    background-color: #fff;
+    width: 300px;
+    height: 40px;
+    bottom: 0px;
+}
+.comment_box .comment_foot .inputwrap{
+    display: inline-block;
+    height: 20px;
+    width: 210px;
+    margin: 5px;
+    border: 5px solid #eee;
+    background-color: #eee;
+    border-radius: 15px;
+    vertical-align: top;
+}
+.comment_box .comment_foot input{
+    width: 190px;
+    margin-left: 10px;
+    border: none;
+    height: 20px;
+    background: #eee;
+    outline: none;
+}
+.comment_box .comment_foot .send{
+    display: inline-block;
+    cursor: pointer;
+    background-color: #31c27c;
+    border-radius: 5px;
+    width: 60px;
+    height: 30px;
+    margin-top: 5px;
+    vertical-align: top;
+    color: #fff;
+    font-size: 14px;
+    font-weight: lighter;
+    line-height: 30px;
+    text-align: center;
+}
+.logo{
+    width: 140px;
+    height: 21px;
+    background: url(../img/player_logo.png) no-repeat;
+    position: absolute;
+    left: 20px;
+    top: 12px;
+    opacity: 0.7;
+}
+
+.reg{
+    color: #fff;
+    line-height: 45px;
+    float: right;
+    display: none;
+}
+.reg span{
+    margin-right: 20px;
+    opacity: 0.7;
+    cursor: pointer;
+}
+.reg span a{
+    text-decoration: none;
+    outline: none;
+    color: #fff;
+}
+.content_in .left{
+    float: left;
+    width: 800px;
+    height: 75%;
+}
+.content_in .right{
+    float: right;
+    width: 400px;
+    height: 100%;
+}
+.left .lefthead{
+    width: 100%;
+    height: 50px;
+}
+.left .lefthead span{
+    cursor: pointer;
+}
+.left .msclist{
+    width: 100%;
+    /* height: 550px; */
+    overflow: auto;
+    height: 100%;
+}
+.msclist li{
+    width: 100%;
+    height: 50px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.03);
+    box-sizing: border-box;
+    user-select: none;
+}
+.msclist ul .emptylist{
+    display: block;
+    text-align: center;
+    color: rgba(255, 255, 255,0.7);
+    font-weight: lighter;
+    font-size: 40px;
+    margin-top: 100px;
+}
+.msclist li div{
+    float: left;
+    color: #fff;
+    line-height: 50px;
+}
+.title div{
+    color: rgba(255, 255, 255, 0.7  )!important;
+}
+.songs div a{
+    color: #fff;
+    opacity: 0.7
+}
+/*这个分号千万不能动,有毒*
+;
+.msclist li .licheck{
+width: 50px;
+height: 100%;
+text-align: center;
+}
+ */
+.msclist li .licheck i{
+    display: inline-block;
+    width: 14px;
+    height: 14px;
+    border: 1px solid #fff;
+    opacity: 0.3;
+}
+.checked{
+    background: url(../img/icon_sprite.png) no-repeat -60px -80px;
+    opacity: 1!important;
+}
+.msclist li .linum{
+    margin-left: 20px;
+    width: 20px;
+    height: 100%;
+    color: rgba(255,255,255,0.7);
+}
+.msclist li .linum2{
+    color: transparent;
+    background: url("../img/wave.gif") no-repeat 0 center;
+}
+.msclist li .liname{
+    width: 55%;
+    height: 100%;
+}
+.songs .liname a{
+    cursor: default;
+}
+.liname .limenu{
+    margin-top: 6px;
+    float: right;
+    margin-right: 20px;
+    display: none;
+}
+.liname .limenu a {
+    cursor: pointer;
+    display: inline-block;
+    width: 36px;
+    height: 36px;
+    background: url('../img/icon_list_menu.png') no-repeat;
+}
+.limenu a:nth-child(1){
+    background-position: -120px 0;
+    /* background-position: -80px -200px; */
+}
+.limenu a:nth-child(2){
+    background-position: -120px -80px;
+}
+.limenu a:nth-child(3){
+    background-position: -120px -120px;
+}
+.limenu a:nth-child(4){
+    background-position: -120px -40px;
+}
+.limenu .listplay2 {
+    background-position: -80px -200px!important;
+}
+.msclist li .lisinger{
+    width: 30%;
+    height: 100%;
+    overflow: hidden;
+}
+.msclist li .litime{
+    color: rgba(255, 255, 255, 0.6);
+}
+.litime a{
+    display: inline-block;
+    width: 36px;
+    height: 36px;
+    background: url('../img/icon_list_menu.png') no-repeat;
+    background-position: -120px -160px;
+    margin-top: 6px;
+    float: left;
+    display: none;
+}
+.lefthead .bt{
+    display: inline-block;
+    width: 120px;
+    height: 36px;
+    color: #fff;
+    border: 1px solid rgba(255,255,255,0.5);
+    border-radius: 2px;
+    opacity: 0.8;
+    margin-right: 6px;
+    line-height: 36px;
+    text-align: center;
+}
+.lefthead .bt:hover{
+    border-color: #fff;
+}
+.lefthead .bt i{
+    display: inline-block;
+    width: 18px;
+    height: 18px;
+    background: url("../img/icon_sprite.png") no-repeat;
+    vertical-align: -5px;
+}
+.lefthead span:nth-child(1) i{
+    background-position: -60px -20px;
+}
+.lefthead span:nth-child(2) i{
+    background-position: -20px -20px;
+}
+.lefthead span:nth-child(3) i{
+    background-position: -40px -240px;
+}
+.lefthead span:nth-child(4) i{
+    background-position: -100px -20px;
+}
+.lefthead span:nth-child(5) i{
+    background-position: -40px -300px;
+}
+
+.right .info{
+    text-align: center;
+    color: rgba(255, 255, 255, 0.7);
+    line-height: 30px;
+}
+.info .song_info_pic{
+    display: inline-block;
+    background:url(../img/album_cover_player.png) no-repeat;
+    width: 201px;
+    height: 180px;
+    text-align: left;
+
+}
+.info div a{
+    text-decoration: none;
+    color: #fff;
+    opacity: 0.8;
+}
+.song_info_pic img{
+    width: 180px;
+    height: 180px;;
+}
+.right .lyric_contain{
+    margin-top: 30px;
+    height: 30%;
+    /* overflow: hidden; */
+    overflow-y: auto;
+}
+.right .lyric{
+    text-align: center;
+}
+    
+.right .lyric li{
+    line-height: 30px;
+    color: rgba(255,255,255,0.8);
+}
+.right .lyric .cur{
+    color: #31c27c;
+}
+
+.footer_in a{
+    display: inline-block;
+    color: #fff;
+    background: url("../img/player.png") no-repeat;
+    margin-right: 17px;
+}
+.footer_in .music_pre{
+    width: 19px;
+    height: 20px;
+    margin-right: 45px;
+    background-position: 0 -30px;
+}
+.footer_in .music_play{
+    width: 21px;
+    height: 29px;
+    margin-right: 45px;
+    background-position: 0 0;
+}
+.footer_in .music_play2{
+    background-position: -30px 0;
+}
+
+.footer_in .music_next{
+    width: 19px;
+    height: 20px;
+    margin-right: 36px;
+    background-position: 0 -52px;
+}
+.footer_in .music_pro_info{
+    display: inline-block;
+    width: 54%;
+    height: 40px;
+    position: relative;
+    top: 10px;
+}
+.footer_in .music_mode{
+    width: 26px;
+    height: 25px;
+    background-position:0 -205px;
+}
+.footer_in .music_mode2{
+    width: 23px;
+    height: 22px;
+    background-position:0 -260px;
+}
+.footer_in .music_mode3{
+    width: 25px;
+    height: 19px;
+    background-position: 0 -74px;
+}
+.footer_in .music_mode4{
+    width: 26px;
+    height: 25px;
+    background-position: 0 -232px
+}
+
+.footer_in .music_fav{
+    width: 24px;
+    height: 21px;
+    background-position: 0 -96px;
+}
+.footer_in .music_fav2{
+    background-position: -30px -96px;
+}
+.footer_in .music_down{
+    width: 22px;
+    height: 21px;
+    background-position: 0 -120px
+}
+.footer_in .music_comment{
+    position: relative;
+    width: 24px;
+    height: 24px;
+    background-position: 0 -430px;
+}
+.footer_in .music_comment .comment_num{
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 15px;
+    margin-top: -2px;
+    margin-right: 0px;
+    text-align: center;
+    display: inline-block;
+    font-size: 10px;
+    line-height: 10px;
+}
+.footer_in .music_only{
+    width: 74px;
+    height: 27px;
+    background-position: 0 -282px;
+}
+.footer_in .music_only2{
+    background-position: 0 -310px;
+}
+
+.footer_in .music_voice_info{
+    display: inline-block;
+    width: 120px;
+    height: 40px;
+    position: relative;
+}
+.music_pro_info .music_pro_top{
+    width: 100%;
+    height: 30px;
+    color: rgb(255, 255, 255);
+    line-height: 30px;
+}
+.music_pro_top .music_pro_left{
+    float: left;
+}
+.music_pro_top i{
+    opacity: 0.8;
+}
+.music_pro_top span{
+    opacity: 0.8;
+}
+.music_pro_top .music_pro_right{
+    float: right;
+}
+
+.music_pro_info .music_pro_bar{
+    width: 100%;
+    height: 2px;
+    background-color: rgba(255,255,255,.1);
+    cursor: pointer;
+    border: 1px transparent;
+    
+    position: relative;
+}
+.music_pro_bar .msc_pro_line{
+    width: 0%;
+    height: 2px;
+    background-color: rgba(255,255,255,.7);
+}
+.music_pro_bar .msc_pro_dot{
+    background-color:rgba(255,255,255,.8);
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    position: absolute;
+    top: -5px;
+    margin-left: -6px;
+    left: 0%;
+}
+.music_voice_info .music_sound_bar{
+    /* width: 100px; */
+    width: 70%;
+    height: 2px;
+    border-radius: 1px;
+    position: absolute;
+    top: 25px;
+    right: -4px;
+    background-color: rgba(255,255,255,.1);
+    cursor: pointer;
+}
+
+.music_voice_info a{
+    width: 26px;
+    height: 21px;
+    background-position: 0 -144px;
+    position: absolute;
+    top: 16px;
+}
+.no_voice{
+    background-position: 0 -182px!important;
+}
+.music_sound_bar .msc_sound_line{
+    width: 100%;
+    height: 2px;
+    background-color: rgba(255,255,255,.7);
+}
+.music_sound_bar .msc_sound_dot{
+    background-color:rgba(255,255,255,.8);
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    position: relative;
+    top: -7px;
+    margin-left: -6px;
+    left: 100%;
+}
+
+.maskbg{
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: #333638;
+    /* background-image: url(../img/blackcab.jpg); */
+    background-position:  0 50%;
+    background-repeat: no-repeat;
+    background-size: cover;
+    z-index: -2;
+    filter: blur(65px);
+    transform: translateZ(0);
+}
+.maskcolor{
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+    background-color:rgba(0,0,0,0.35);
+}
+
+._mCS_1 .mCSB_dragger .mCSB_dragger_bar{ width:8px;}
